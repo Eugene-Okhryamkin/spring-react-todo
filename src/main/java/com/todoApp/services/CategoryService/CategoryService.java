@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 @Slf4j
+@Service
 public class CategoryService implements ICategoryService {
 
     @Autowired
-    ICategoryRepository categoryRepository;
+    private ICategoryRepository categoryRepository;
 
     @Override
     public Category getById(Long id) {
@@ -21,8 +21,10 @@ public class CategoryService implements ICategoryService {
     }
 
     @Override
-    public void saveCategory(Category category) {
+    public Category saveCategory(Category category) {
         categoryRepository.save(category);
+
+        return category;
     }
 
     @Override

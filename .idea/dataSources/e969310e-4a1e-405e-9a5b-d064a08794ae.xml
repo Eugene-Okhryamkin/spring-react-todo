@@ -795,7 +795,7 @@ false Zulu
     <database id="3" parent="1" name="todoApp">
       <ObjectId>16394</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>494</IntrospectionStateNumber>
+      <IntrospectionStateNumber>586</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <role id="4" parent="1" name="pg_execute_server_program">
@@ -866,7 +866,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>495</IntrospectionStateNumber>
+      <IntrospectionStateNumber>587</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="18" parent="3" name="plpgsql">
@@ -966,85 +966,58 @@ UC/10
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
-    <table id="30" parent="17" name="Categories">
-      <ObjectId>16395</ObjectId>
+    <sequence id="30" parent="17" name="hibernate_sequence">
+      <ObjectId>16570</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>489</StateNumber>
-    </table>
+      <StateNumber>582</StateNumber>
+      <DataType>bigint|0s</DataType>
+    </sequence>
     <table id="31" parent="17" name="Item">
-      <ObjectId>16403</ObjectId>
+      <ObjectId>16562</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>489</StateNumber>
+      <StateNumber>585</StateNumber>
     </table>
-    <column id="32" parent="30" name="id">
+    <table id="32" parent="17" name="category">
+      <ObjectId>16572</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>585</StateNumber>
+    </table>
+    <table id="33" parent="17" name="item">
+      <ObjectId>16580</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>584</StateNumber>
+    </table>
+    <column id="34" parent="31" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>488</StateNumber>
+      <StateNumber>578</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="33" parent="30" name="Name">
+    <column id="35" parent="31" name="name">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>488</StateNumber>
+      <StateNumber>578</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="34" parent="30" name="Description">
+    <column id="36" parent="31" name="description">
       <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>488</StateNumber>
+      <StateNumber>578</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="35" parent="30" name="Categories_pkey">
-      <ObjectId>16401</ObjectId>
-      <StateNumber>488</StateNumber>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-      <Primary>1</Primary>
-      <AccessMethodId>403</AccessMethodId>
-      <CollationIds>0</CollationIds>
-      <ClassIds>3124</ClassIds>
-    </index>
-    <key id="36" parent="30" name="Categories_pkey">
-      <ObjectId>16402</ObjectId>
-      <StateNumber>488</StateNumber>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>Categories_pkey</UnderlyingIndexName>
-    </key>
-    <column id="37" parent="31" name="Description">
-      <Position>1</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>489</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="38" parent="31" name="Name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>489</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="39" parent="31" name="id">
-      <Position>3</Position>
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>489</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="40" parent="31" name="CategoryId">
+    <column id="37" parent="31" name="category_id">
       <Position>4</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>489</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="41" parent="31" name="Item_pkey">
-      <ObjectId>16409</ObjectId>
-      <StateNumber>489</StateNumber>
+    <index id="38" parent="31" name="Item_pkey">
+      <ObjectId>16568</ObjectId>
+      <StateNumber>578</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1052,22 +1025,94 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="42" parent="31" name="Item_pkey">
-      <ObjectId>16410</ObjectId>
-      <StateNumber>489</StateNumber>
+    <key id="39" parent="31" name="Item_pkey">
+      <ObjectId>16569</ObjectId>
+      <StateNumber>578</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>Item_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="43" parent="31" name="CategoryId">
-      <ObjectId>16411</ObjectId>
-      <StateNumber>489</StateNumber>
-      <ColNames>CategoryId</ColNames>
-      <RefTableId>16395</RefTableId>
+    <foreign-key id="40" parent="31" name="category_id">
+      <ObjectId>16588</ObjectId>
+      <StateNumber>585</StateNumber>
+      <ColNames>category_id</ColNames>
+      <RefTableId>16572</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>Categories</RefTableName>
-      <RefKeyName>Categories_pkey</RefKeyName>
+      <RefTableName>category</RefTableName>
+      <RefKeyName>category_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
+    <column id="41" parent="32" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>583</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="42" parent="32" name="description">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>583</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="43" parent="32" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>583</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="44" parent="32" name="category_pkey">
+      <ObjectId>16578</ObjectId>
+      <StateNumber>583</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>3124</ClassIds>
+    </index>
+    <key id="45" parent="32" name="category_pkey">
+      <ObjectId>16579</ObjectId>
+      <StateNumber>583</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>category_pkey</UnderlyingIndexName>
+    </key>
+    <column id="46" parent="33" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>584</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="47" parent="33" name="description">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>584</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="48" parent="33" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>584</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="49" parent="33" name="item_pkey">
+      <ObjectId>16586</ObjectId>
+      <StateNumber>584</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>3124</ClassIds>
+    </index>
+    <key id="50" parent="33" name="item_pkey">
+      <ObjectId>16587</ObjectId>
+      <StateNumber>584</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>item_pkey</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>
